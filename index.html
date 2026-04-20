@@ -5,178 +5,229 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Evolve AM | Transforming Investments</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --navy:   #0D2B4E;
-      --blue:   #3B6E8F;
-      --mid:    #1A4A7A;
-      --light:  #6B9AB8;
-      --pale:   #EAF2F8;
-      --white:  #FFFFFF;
-      --gray:   #F5F7FA;
-      --text:   #1A2332;
-      --muted:  #5A6A7A;
+      --navy:  #0D2B4E;
+      --blue:  #3B6E8F;
+      --mid:   #1E4D72;
+      --light: #6B9AB8;
+      --pale:  #EAF2F8;
+      --white: #FFFFFF;
+      --gray:  #F5F7FA;
+      --text:  #1A2332;
+      --muted: #5A6A7A;
+      --border:#D8E6EF;
     }
-
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
 
-    /* NAV */
+    /* ── NAV ── */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 48px; height: 68px;
-      background: rgba(13, 43, 78, 0.96);
-      backdrop-filter: blur(8px);
+      background: rgba(13,43,78,0.97); backdrop-filter: blur(10px);
     }
     .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .nav-logo svg { width: 36px; height: 36px; }
-    .nav-wordmark { color: var(--white); font-size: 18px; font-weight: 600; letter-spacing: 0.08em; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; transition: color .2s; }
-    .nav-links a:hover { color: var(--white); }
-    .nav-cta { background: var(--blue); color: var(--white); padding: 8px 20px; border-radius: 4px; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .2s; }
+    .nav-logo svg { width: 34px; height: 34px; }
+    .nav-wordmark { color: #fff; font-size: 17px; font-weight: 600; letter-spacing: 0.1em; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 13px; font-weight: 500; letter-spacing: 0.03em; transition: color .2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta { background: var(--blue); color: #fff; padding: 8px 20px; border-radius: 4px; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .2s; }
     .nav-cta:hover { background: var(--light); }
 
-    /* HERO */
+    /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      background: linear-gradient(150deg, var(--navy) 0%, #1E5070 55%, var(--blue) 100%);
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; padding: 120px 24px 80px;
-      position: relative; overflow: hidden;
+      text-align: center; padding: 120px 24px 80px; position: relative; overflow: hidden;
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 30%, rgba(107,154,184,0.25) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 65% 25%, rgba(107,154,184,0.2) 0%, transparent 65%);
     }
-    .hero-logo { position: relative; margin-bottom: 32px; }
-    .hero-logo svg { width: 120px; height: 120px; }
-    .hero h1 {
-      position: relative; color: var(--white);
-      font-size: clamp(40px, 6vw, 72px); font-weight: 300; letter-spacing: 0.14em;
-      margin-bottom: 8px; line-height: 1;
-    }
-    .hero-tagline {
-      position: relative; color: rgba(255,255,255,0.75);
-      font-size: 13px; letter-spacing: 0.22em; font-weight: 500;
-      text-transform: uppercase; margin-bottom: 40px;
-    }
-    .hero-sub {
-      position: relative; color: rgba(255,255,255,0.85);
-      font-size: 18px; font-weight: 300; max-width: 560px;
-      line-height: 1.7; margin-bottom: 48px;
-    }
+    .hero-eyebrow { position: relative; color: var(--light); font-size: 11px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; margin-bottom: 28px; }
+    .hero-logo { position: relative; margin-bottom: 28px; }
+    .hero-logo svg { width: 100px; height: 100px; }
+    .hero h1 { position: relative; color: #fff; font-size: clamp(44px,6vw,76px); font-weight: 300; letter-spacing: 0.15em; margin-bottom: 6px; line-height: 1; }
+    .hero-tagline { position: relative; color: rgba(255,255,255,0.65); font-size: 12px; letter-spacing: 0.24em; font-weight: 500; text-transform: uppercase; margin-bottom: 36px; }
+    .hero-headline { position: relative; color: #fff; font-size: clamp(18px,2.5vw,26px); font-weight: 300; max-width: 720px; line-height: 1.55; margin-bottom: 20px; }
+    .hero-sub { position: relative; color: rgba(255,255,255,0.7); font-size: 15px; max-width: 600px; line-height: 1.75; margin-bottom: 48px; }
+    .hero-pills { position: relative; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+    .pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.85); padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 500; letter-spacing: 0.04em; }
     .hero-buttons { position: relative; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
-    .btn-primary { background: var(--white); color: var(--navy); padding: 14px 32px; border-radius: 4px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all .2s; }
+    .btn-primary { background: #fff; color: var(--navy); padding: 14px 32px; border-radius: 4px; font-weight: 700; font-size: 14px; text-decoration: none; letter-spacing: 0.02em; transition: all .2s; }
     .btn-primary:hover { background: var(--pale); }
-    .btn-outline { border: 1.5px solid rgba(255,255,255,0.6); color: var(--white); padding: 14px 32px; border-radius: 4px; font-weight: 500; font-size: 14px; text-decoration: none; transition: all .2s; }
-    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+    .btn-outline { border: 1.5px solid rgba(255,255,255,0.5); color: #fff; padding: 14px 32px; border-radius: 4px; font-weight: 500; font-size: 14px; text-decoration: none; transition: all .2s; }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
 
-    /* STATS BAND */
-    .stats-band { background: var(--navy); padding: 48px 24px; }
-    .stats-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0; }
-    .stat { text-align: center; padding: 16px 24px; border-right: 1px solid rgba(255,255,255,0.1); }
+    /* ── STATS ── */
+    .stats-band { background: var(--navy); padding: 0; }
+    .stats-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat { text-align: center; padding: 36px 20px; border-right: 1px solid rgba(255,255,255,0.08); }
     .stat:last-child { border-right: none; }
-    .stat-num { color: var(--white); font-size: 36px; font-weight: 700; line-height: 1; }
-    .stat-label { color: rgba(255,255,255,0.55); font-size: 12px; font-weight: 500; letter-spacing: 0.06em; margin-top: 6px; }
+    .stat-num { color: #fff; font-size: 38px; font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
+    .stat-label { color: rgba(255,255,255,0.5); font-size: 12px; font-weight: 500; letter-spacing: 0.06em; margin-top: 8px; line-height: 1.4; }
 
-    /* SECTIONS */
+    /* ── COMMON SECTION ── */
     section { padding: 96px 24px; }
     .container { max-width: 1100px; margin: 0 auto; }
-    .section-label { color: var(--blue); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; }
-    .section-title { font-size: clamp(28px, 4vw, 40px); font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.2; }
-    .section-sub { font-size: 17px; color: var(--muted); line-height: 1.7; max-width: 600px; margin-bottom: 56px; }
+    .section-eyebrow { color: var(--blue); font-size: 11px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-size: clamp(28px,3.5vw,42px); font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.2; }
+    .section-sub { font-size: 17px; color: var(--muted); line-height: 1.75; max-width: 640px; margin-bottom: 56px; }
+    .section-sub.wide { max-width: 800px; }
+    hr.divider { border: none; border-top: 1px solid var(--border); margin: 56px 0; }
 
-    /* ABOUT */
-    .about { background: var(--gray); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-    .about-card { background: var(--white); border-radius: 8px; padding: 36px; border-top: 3px solid var(--blue); }
-    .about-card h3 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
-    .about-card ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-    .about-card li { font-size: 15px; color: var(--muted); line-height: 1.6; padding-left: 20px; position: relative; }
-    .about-card li::before { content: '—'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
+    /* ── EXECUTIVE SUMMARY ── */
+    .exec { background: var(--gray); }
+    .exec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .exec-text p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 20px; }
+    .exec-text p:last-child { margin-bottom: 0; }
+    .exec-text strong { color: var(--navy); }
+    .exec-pillars { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .exec-pillar { background: var(--white); border-radius: 8px; padding: 24px; border-left: 3px solid var(--blue); }
+    .exec-pillar p { font-size: 14px; font-weight: 600; color: var(--navy); line-height: 1.4; }
 
-    /* EDGE */
-    .edge-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-    .edge-card { background: var(--white); border-radius: 8px; padding: 36px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); transition: transform .2s, box-shadow .2s; }
-    .edge-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
-    .edge-icon { width: 52px; height: 52px; background: var(--pale); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
-    .edge-icon svg { width: 26px; height: 26px; stroke: var(--blue); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .edge-card h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 14px; }
-    .edge-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+    /* ── DIFFERENTIATORS ── */
+    .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .diff-card { background: var(--white); border-radius: 10px; padding: 36px; box-shadow: 0 2px 20px rgba(0,0,0,0.06); border-top: 3px solid var(--blue); transition: transform .25s, box-shadow .25s; }
+    .diff-card:hover { transform: translateY(-5px); box-shadow: 0 10px 36px rgba(0,0,0,0.1); }
+    .diff-num { font-size: 42px; font-weight: 800; color: var(--pale); line-height: 1; margin-bottom: 16px; }
+    .diff-card h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+    .diff-card p { font-size: 14px; color: var(--muted); line-height: 1.75; }
 
-    /* TEAM */
+    /* ── PHILOSOPHY ── */
+    .philosophy { background: var(--navy); }
+    .philosophy .section-eyebrow { color: var(--light); }
+    .philosophy .section-title { color: #fff; }
+    .philosophy .section-sub { color: rgba(255,255,255,0.7); }
+    .phil-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; }
+    .phil-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 32px; }
+    .phil-card h3 { font-size: 16px; font-weight: 700; color: var(--light); margin-bottom: 10px; }
+    .phil-card p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+
+    /* ── ENGAGEMENT ── */
+    .engagement { background: var(--gray); }
+    .engage-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .engage-step { padding: 36px 28px; background: var(--white); border-right: 1px solid var(--border); position: relative; }
+    .engage-step:last-child { border-right: none; }
+    .engage-num { font-size: 11px; font-weight: 700; color: var(--blue); letter-spacing: 0.1em; margin-bottom: 16px; }
+    .engage-step h3 { font-size: 15px; font-weight: 700; color: var(--navy); line-height: 1.3; }
+    .engage-caption { text-align: center; margin-top: 24px; font-size: 14px; font-style: italic; color: var(--muted); }
+    .engage-caption strong { color: var(--navy); font-style: normal; }
+
+    /* ── ADVANTAGE ── */
+    .advantage-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 28px; }
+    .adv-card { background: var(--white); border-radius: 10px; padding: 36px; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+    .adv-icon { width: 48px; height: 48px; background: var(--pale); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .adv-icon svg { width: 24px; height: 24px; stroke: var(--blue); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .adv-card h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .adv-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .adv-card li { font-size: 14px; color: var(--muted); padding-left: 18px; position: relative; line-height: 1.6; }
+    .adv-card li::before { content: '—'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
+
+    /* ── TEAM ── */
     .team { background: var(--gray); }
-    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; }
-    .team-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
-    .team-avatar { width: 100%; height: 160px; background: linear-gradient(135deg, var(--navy), var(--blue)); display: flex; align-items: center; justify-content: center; }
-    .team-initials { width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.4); display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 24px; font-weight: 700; }
-    .team-body { padding: 24px; }
-    .team-name { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-    .team-role { font-size: 12px; font-weight: 600; color: var(--blue); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px; }
-    .team-body ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .team-body li { font-size: 13px; color: var(--muted); line-height: 1.5; padding-left: 14px; position: relative; }
-    .team-body li::before { content: '·'; position: absolute; left: 0; color: var(--blue); font-weight: 700; font-size: 16px; line-height: 1.2; }
+    .team-partners { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-bottom: 48px; }
+    .team-card { background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.06); }
+    .team-avatar { height: 140px; background: linear-gradient(135deg, var(--navy), var(--blue)); display: flex; align-items: center; justify-content: center; }
+    .team-initials { width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.35); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; font-weight: 700; }
+    .team-body { padding: 20px; }
+    .team-name { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .team-role { font-size: 11px; font-weight: 600; color: var(--blue); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .team-body ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .team-body li { font-size: 12.5px; color: var(--muted); padding-left: 12px; position: relative; line-height: 1.5; }
+    .team-body li::before { content: '·'; position: absolute; left: 0; color: var(--blue); font-weight: 700; font-size: 14px; line-height: 1.3; }
+    .team-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; margin-bottom: 16px; }
+    .team-org { background: var(--white); border-radius: 10px; padding: 32px; box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
+    .org-cols { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .org-col h4 { font-size: 12px; font-weight: 700; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--pale); }
+    .org-col ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .org-col li { font-size: 13px; color: var(--text); }
+    .org-col li.sub { padding-left: 14px; font-size: 12px; color: var(--muted); }
+    .org-col li.sub::before { content: '↳ '; }
 
-    /* COVERAGE */
-    .coverage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .cov-card { border-radius: 8px; overflow: hidden; }
-    .cov-header { background: var(--navy); padding: 28px 28px 20px; }
-    .cov-header h3 { color: var(--white); font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-    .cov-header .cov-aum { color: var(--light); font-size: 26px; font-weight: 700; }
-    .cov-header .cov-aum-label { color: rgba(255,255,255,0.55); font-size: 11px; letter-spacing: 0.08em; }
-    .cov-body { background: var(--pale); padding: 24px 28px; }
-    .cov-body ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .cov-body li { font-size: 14px; color: var(--text); display: flex; align-items: flex-start; gap: 8px; }
-    .cov-body li::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    /* ── COVERAGE ── */
+    .coverage-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+    .cov-col { }
+    .cov-header { background: var(--navy); padding: 32px 28px 24px; }
+    .cov-header h3 { color: #fff; font-size: 16px; font-weight: 700; margin-bottom: 20px; }
+    .cov-big { display: flex; gap: 24px; }
+    .cov-metric { }
+    .cov-metric-num { color: var(--light); font-size: 28px; font-weight: 800; line-height: 1; }
+    .cov-metric-label { color: rgba(255,255,255,0.5); font-size: 11px; line-height: 1.4; margin-top: 4px; }
+    .cov-body { background: var(--pale); padding: 24px 28px; border-right: 1px solid var(--border); }
+    .cov-col:last-child .cov-body { border-right: none; }
+    .cov-body ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .cov-body li { font-size: 13.5px; color: var(--text); display: flex; align-items: flex-start; gap: 8px; }
+    .cov-body li::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; }
 
-    /* PARTNERS */
-    .partners { background: var(--gray); }
-    .partners-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .partner-card { background: var(--white); border-radius: 8px; padding: 36px 28px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
-    .partner-name { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.01em; }
-    .partner-strategy { font-size: 12px; font-weight: 700; color: var(--blue); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 20px; border-top: 2px solid var(--pale); padding-top: 16px; }
-    .partner-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
-    .partner-tam { margin-top: 20px; background: var(--pale); border-radius: 6px; padding: 12px; }
-    .partner-tam-num { font-size: 20px; font-weight: 700; color: var(--navy); }
-    .partner-tam-label { font-size: 11px; color: var(--muted); }
+    /* ── PARTNERS ── */
+    .partners { background: var(--navy); }
+    .partners .section-eyebrow { color: var(--light); }
+    .partners .section-title { color: #fff; }
+    .partners .section-sub { color: rgba(255,255,255,0.65); }
+    .partners-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
+    .partner-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 28px 20px; text-align: center; transition: background .2s, border-color .2s; }
+    .partner-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.25); }
+    .partner-name { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .partner-strategy { font-size: 11px; font-weight: 600; color: var(--light); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .partner-model { display: inline-block; background: rgba(107,154,184,0.2); color: var(--light); padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; }
 
-    /* GLOCAL BANNER */
-    .glocal { background: linear-gradient(135deg, var(--mid) 0%, var(--navy) 100%); padding: 80px 24px; text-align: center; }
-    .glocal h2 { color: var(--white); font-size: clamp(24px, 4vw, 40px); font-weight: 700; margin-bottom: 16px; }
-    .glocal p { color: rgba(255,255,255,0.8); font-size: 17px; max-width: 640px; margin: 0 auto 36px; line-height: 1.7; }
-    .glocal-tags { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .tag { background: rgba(255,255,255,0.12); color: var(--white); padding: 8px 18px; border-radius: 20px; font-size: 13px; font-weight: 500; border: 1px solid rgba(255,255,255,0.2); }
+    /* ── MODEL ── */
+    .model { background: var(--gray); }
+    .model-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .model-card { background: var(--white); border-radius: 10px; padding: 36px 28px; box-shadow: 0 2px 16px rgba(0,0,0,0.05); }
+    .model-card h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+    .model-card p { font-size: 14px; color: var(--muted); line-height: 1.75; }
 
-    /* CONTACT */
+    /* ── COMMITMENT BAND ── */
+    .commitment { background: linear-gradient(135deg, var(--mid) 0%, var(--navy) 100%); padding: 80px 24px; text-align: center; }
+    .commitment h2 { color: #fff; font-size: clamp(24px,4vw,40px); font-weight: 700; margin-bottom: 16px; }
+    .commitment p { color: rgba(255,255,255,0.75); font-size: 17px; max-width: 680px; margin: 0 auto 40px; line-height: 1.75; }
+    .commit-items { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .commit-item { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18); color: #fff; padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: 500; }
+
+    /* ── CONTACT ── */
     .contact { background: var(--navy); padding: 96px 24px; text-align: center; }
-    .contact .section-label { color: var(--light); }
-    .contact .section-title { color: var(--white); }
-    .contact p { color: rgba(255,255,255,0.7); font-size: 17px; max-width: 500px; margin: 0 auto 40px; line-height: 1.7; }
-    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; max-width: 700px; margin: 0 auto; }
-    .contact-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 24px; }
-    .contact-item h4 { color: var(--light); font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
-    .contact-item p { color: var(--white); font-size: 15px; margin: 0; }
+    .contact .section-eyebrow { color: var(--light); }
+    .contact .section-title { color: #fff; }
+    .contact > .container > p { color: rgba(255,255,255,0.65); font-size: 17px; max-width: 520px; margin: 0 auto 48px; line-height: 1.75; }
+    .contact-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; max-width: 900px; margin: 0 auto; }
+    .contact-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 24px 20px; }
+    .contact-item h4 { color: var(--light); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 10px; }
+    .contact-item p { color: #fff; font-size: 14px; line-height: 1.5; }
+    .contact-item .focus { color: rgba(255,255,255,0.55); font-size: 12px; margin-top: 6px; }
 
-    /* FOOTER */
-    footer { background: #070F1A; padding: 32px 24px; }
-    .footer-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    /* ── FOOTER ── */
+    footer { background: #060E1A; padding: 36px 24px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
     .footer-brand { display: flex; align-items: center; gap: 10px; }
-    .footer-brand svg { width: 28px; height: 28px; }
-    .footer-brand span { color: rgba(255,255,255,0.6); font-size: 13px; }
-    .footer-disclaimer { color: rgba(255,255,255,0.25); font-size: 11px; max-width: 560px; line-height: 1.5; }
+    .footer-brand svg { width: 26px; height: 26px; }
+    .footer-brand span { color: rgba(255,255,255,0.5); font-size: 13px; }
+    .footer-disclaimer { color: rgba(255,255,255,0.22); font-size: 11px; max-width: 580px; line-height: 1.6; }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
       nav { padding: 0 20px; }
       .nav-links { display: none; }
-      .about-grid, .edge-grid, .coverage-grid, .partners-grid { grid-template-columns: 1fr; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
+      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .exec-grid, .diff-grid, .phil-grid, .advantage-grid, .model-grid { grid-template-columns: 1fr; }
+      .engage-grid { grid-template-columns: repeat(2,1fr); }
+      .engage-step { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+      .team-partners { grid-template-columns: repeat(2,1fr); }
+      .coverage-grid, .partners-grid, .contact-grid { grid-template-columns: 1fr; }
+      .org-cols { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .team-partners { grid-template-columns: 1fr; }
+      .engage-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2,1fr); }
     }
   </style>
 </head>
@@ -184,16 +235,16 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">
-    <svg viewBox="0 0 36 36" fill="none">
-      <circle cx="18" cy="18" r="16" stroke="white" stroke-width="1.8"/>
-      <line x1="8" y1="27" x2="28" y2="9" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+  <a href="#home" class="nav-logo">
+    <svg viewBox="0 0 34 34" fill="none">
+      <circle cx="17" cy="17" r="15" stroke="white" stroke-width="1.6"/>
+      <line x1="7" y1="26" x2="27" y2="8" stroke="white" stroke-width="1.6" stroke-linecap="round"/>
     </svg>
     <span class="nav-wordmark">ØVØLVØ</span>
   </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#edge">Our Edge</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="#coverage">Coverage</a></li>
     <li><a href="#partners">Partners</a></li>
@@ -203,16 +254,24 @@
 
 <!-- HERO -->
 <section class="hero" id="home">
+  <p class="hero-eyebrow">Mexico &bull; Transforming Investments</p>
   <div class="hero-logo">
-    <svg viewBox="0 0 120 120" fill="none">
-      <circle cx="60" cy="60" r="54" stroke="white" stroke-width="3"/>
-      <circle cx="60" cy="60" r="38" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
-      <line x1="28" y1="91" x2="92" y2="29" stroke="white" stroke-width="3" stroke-linecap="round"/>
+    <svg viewBox="0 0 100 100" fill="none">
+      <circle cx="50" cy="50" r="46" stroke="white" stroke-width="2.5"/>
+      <circle cx="50" cy="50" r="32" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+      <line x1="22" y1="77" x2="78" y2="23" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
     </svg>
   </div>
   <h1>ØVØLVØ</h1>
   <p class="hero-tagline">Transforming Investments</p>
-  <p class="hero-sub">Mexico's leading investment distribution platform connecting the world's best-in-class asset managers with the full spectrum of Mexican institutional, family office, and intermediary investors.</p>
+  <p class="hero-headline">Institutional-Grade Access to Global Investment Excellence</p>
+  <p class="hero-sub">Mexico's premier financial strategic advisory firm — connecting the world's best-in-class asset managers with institutional and private investors through disciplined evaluation, structural alignment, and deep local expertise.</p>
+  <div class="hero-pills">
+    <span class="pill">Not a Placement Agent</span>
+    <span class="pill">Skin in the Game</span>
+    <span class="pill">Zero Conflicts of Interest</span>
+    <span class="pill">35+ Years of Experience</span>
+  </div>
   <div class="hero-buttons">
     <a href="#about" class="btn-primary">Discover Evolve AM</a>
     <a href="#contact" class="btn-outline">Get in Touch</a>
@@ -223,84 +282,196 @@
 <div class="stats-band">
   <div class="stats-grid">
     <div class="stat">
-      <div class="stat-num">+$9B</div>
-      <div class="stat-label">Assets Raised</div>
+      <div class="stat-num">35+</div>
+      <div class="stat-label">Years Senior Capital Markets Experience</div>
     </div>
     <div class="stat">
-      <div class="stat-num">+20</div>
-      <div class="stat-label">Years of Experience</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">275+</div>
-      <div class="stat-label">Clients Served</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">$815B</div>
-      <div class="stat-label">Client AUM Covered</div>
+      <div class="stat-num">$10B+</div>
+      <div class="stat-label">Raised with Mexican Institutional & Private Investors</div>
     </div>
     <div class="stat">
       <div class="stat-num">$3B+</div>
-      <div class="stat-label">Alternatives Raised</div>
+      <div class="stat-label">Allocated to Alternative Strategies</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">$6B+</div>
+      <div class="stat-label">Across Liquid Investment Strategies</div>
     </div>
   </div>
 </div>
 
-<!-- ABOUT -->
-<section class="about" id="about">
+<!-- EXECUTIVE SUMMARY / ABOUT -->
+<section class="exec" id="about">
   <div class="container">
-    <div class="section-label">Who We Are</div>
-    <h2 class="section-title">A Distinguished Financial Services Firm</h2>
-    <p class="section-sub">Evolve AM is the partner of choice for leading global asset managers seeking access to Mexican institutional, family office, and private wealth capital.</p>
-    <div class="about-grid">
-      <div class="about-card">
-        <h3>About Evolve AM</h3>
-        <ul>
-          <li>Distinguished financial services firm with a team of seasoned professionals averaging over 20 years of industry experience.</li>
-          <li>Recognized as the partner of choice for institutional, family office, and intermediary clients across Mexico.</li>
-          <li>Deep roots in Mexico's financial ecosystem with unrivaled relationships at every level of client organizations.</li>
-          <li>Founded by former leaders of Compass Group, the market leader in ETF, Mutual Fund, SMA, and alternatives distribution in Mexico.</li>
-        </ul>
+    <div class="section-eyebrow">Who We Are</div>
+    <h2 class="section-title">A Strategic Local Partner, Not a Placement Agent</h2>
+    <div class="exec-grid">
+      <div class="exec-text">
+        <p>Evolve is a <strong>Mexico-based financial strategic advisory firm</strong> providing institutional and private investors with disciplined access to leading global asset managers across asset classes.</p>
+        <p>We integrate global investment capabilities within Mexico's institutional framework, aligning strategies with <strong>regulatory standards, portfolio mandates, governance requirements, and structural considerations</strong>.</p>
+        <p>Our role extends beyond manager selection. We evaluate, position, and support each strategy to ensure proper alignment with investor objectives and long-term capital allocation priorities.</p>
+        <p>We are not a traditional placement agent. We are an <strong>active, strategic partner</strong> — we proactively source opportunities, co-invest alongside our clients, and operate as a true extension of each manager's team in Mexico.</p>
       </div>
-      <div class="about-card">
-        <h3>Our Mission</h3>
-        <ul>
-          <li>Offering the most compelling investment products to satisfy our clients' evolving needs.</li>
-          <li>Presenting the best global investment opportunities to institutional and private wealth investors in Mexico.</li>
-          <li>Partnering exclusively with best-in-class asset managers who demonstrate proven track records and differentiated strategies.</li>
-          <li>Providing a holistic, "Glocal" vision — global perspective with expert local advisory and seamless implementation.</li>
-        </ul>
+      <div>
+        <p style="font-size:13px;font-weight:700;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;">Our Approach is Defined By</p>
+        <div class="exec-pillars">
+          <div class="exec-pillar"><p>Exclusive partnerships with best-in-class managers</p></div>
+          <div class="exec-pillar"><p>Regulatory &amp; structural alignment expertise</p></div>
+          <div class="exec-pillar"><p>Deep institutional market intelligence</p></div>
+          <div class="exec-pillar"><p>Sustained relationships across pensions, insurers, family offices, and wealth platforms</p></div>
+        </div>
+        <div style="margin-top:24px;background:var(--white);border-radius:8px;padding:24px;border:1px solid var(--border);">
+          <p style="font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;">Our Business Models</p>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:var(--pale);color:var(--navy);font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;flex-shrink:0;">JV</span>
+              <span style="font-size:13px;color:var(--muted);">Joint Venture — equity partnership, full alignment of interests</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:var(--pale);color:var(--navy);font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;flex-shrink:0;">ADV</span>
+              <span style="font-size:13px;color:var(--muted);">Consulting / Advisory — market intelligence &amp; strategic guidance</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:var(--pale);color:var(--navy);font-size:11px;font-weight:700;padding:3px 8px;border-radius:3px;flex-shrink:0;">REV</span>
+              <span style="font-size:13px;color:var(--muted);">Revenue Sharing — local representative office, cost-aligned with success</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EDGE -->
-<section id="edge">
+<!-- WHY DIFFERENT -->
+<section id="different">
   <div class="container">
-    <div class="section-label">Competitive Advantage</div>
-    <h2 class="section-title">Our Edge</h2>
-    <p class="section-sub">Three pillars that set Evolve AM apart from traditional placement agents and give our partners a decisive advantage in Mexico.</p>
-    <div class="edge-grid">
-      <div class="edge-card">
-        <div class="edge-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>Expertise &amp; Understanding</h3>
-        <p>Deep understanding of Mexican clients' investment needs, decision-making processes, and regulatory framework. Strong track record raising assets across all client segments. Excellent relationships with key decision-makers at every level.</p>
+    <div class="section-eyebrow">Why We're Different</div>
+    <h2 class="section-title">Built to Eliminate Conflicts of Interest</h2>
+    <p class="section-sub">Three structural commitments that fundamentally separate Evolve from traditional placement agents.</p>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-num">01</div>
+        <h3>Skin in the Game — Evolve Co-Invests</h3>
+        <p>We demonstrate our commitment by investing our own capital and that of our affiliates in every opportunity we present. Our success is intrinsically linked to yours — we only win when the investments perform.</p>
       </div>
-      <div class="edge-card">
-        <div class="edge-icon">
-          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3>Our Strengths</h3>
-        <p>Proven track record of success raising over $9 billion USD for global managers with Mexican clients. Strong reputation and deep client trust built over two decades. Active participant in investment committee processes and portfolio construction decisions.</p>
+      <div class="diff-card">
+        <div class="diff-num">02</div>
+        <h3>Compensation for Success, Not Placement</h3>
+        <p>We do not charge a placement fee. Our compensation is generated by investment success, ensuring our incentives are perfectly aligned with investors. We earn money when investments thrive, not by simply closing transactions.</p>
       </div>
-      <div class="edge-card">
-        <div class="edge-icon">
+      <div class="diff-card">
+        <div class="diff-num">03</div>
+        <h3>Efficiency and Value at No Additional Cost</h3>
+        <p>We don't add cost for investors — we actually reduce costs for managers. Our revenue-sharing model makes market entry more efficient for GPs, which translates into better conditions for all stakeholders.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+  <div class="container">
+    <div class="section-eyebrow">Investment Philosophy</div>
+    <h2 class="section-title">Quality over Quantity</h2>
+    <p class="section-sub">Partnering with the best managers across asset classes — prioritizing alignment, long-term conviction, and rigorous oversight over product breadth.</p>
+    <div class="phil-grid">
+      <div class="phil-card">
+        <h3>Selective Partnerships</h3>
+        <p>We partner exclusively with best-in-class managers, prioritizing quality, alignment, and long-term conviction over product breadth. Only 1st-quartile performance vs. benchmark and peers qualifies.</p>
+      </div>
+      <div class="phil-card">
+        <h3>Rigorous Evaluation &amp; Monitoring</h3>
+        <p>Each strategy undergoes disciplined analysis and continuous oversight to ensure consistency in performance, governance, and service standards — including compliance with Mexican regulations.</p>
+      </div>
+      <div class="phil-card">
+        <h3>Investor-Centric Alignment</h3>
+        <p>All opportunities are assessed within the context of regulatory frameworks, portfolio mandates, and risk parameters specific to each investor. Not all products are right for all clients.</p>
+      </div>
+      <div class="phil-card">
+        <h3>Long-Term Capital Perspective</h3>
+        <p>We focus on sustainable relationships and long-term capital allocation outcomes. Our commitment extends throughout the full life of every fund — not just at closing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT PROCESS -->
+<section class="engagement">
+  <div class="container">
+    <div class="section-eyebrow">Our Process</div>
+    <h2 class="section-title">Disciplined Evaluation &amp; Institutional Oversight</h2>
+    <p class="section-sub">We operate as a long-term strategic partner. Our engagement covers the full investment lifecycle.</p>
+    <div class="engage-grid">
+      <div class="engage-step">
+        <div class="engage-num">STEP 01</div>
+        <h3>Identification &amp; Manager Selection</h3>
+      </div>
+      <div class="engage-step">
+        <div class="engage-num">STEP 02</div>
+        <h3>Mandate Fit &amp; Strategic Evaluation</h3>
+      </div>
+      <div class="engage-step">
+        <div class="engage-num">STEP 03</div>
+        <h3>Regulatory &amp; Structural Assessment</h3>
+      </div>
+      <div class="engage-step">
+        <div class="engage-num">STEP 04</div>
+        <h3>Ongoing Monitoring &amp; Institutional Engagement</h3>
+      </div>
+    </div>
+    <p class="engage-caption"><strong>Alignment. Discipline. Long-Term Capital Stewardship.</strong></p>
+  </div>
+</section>
+
+<!-- THE EVOLVE ADVANTAGE -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow">The Evolve Advantage</div>
+    <h2 class="section-title">Full Coverage &amp; Deep Understanding of the Mexican Market</h2>
+    <p class="section-sub">Four structural advantages that make Evolve the definitive gateway to Mexico's capital markets.</p>
+    <div class="advantage-grid">
+      <div class="adv-card">
+        <div class="adv-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Local Presence</h3>
+        <ul>
+          <li>Deep understanding of Mexico's institutional landscape</li>
+          <li>Long-standing relationships across pensions, insurers, family offices, and wealth platforms</li>
+          <li>Strong engagement with key decision-makers across capital pools</li>
+        </ul>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
-        <h3>Our Approach</h3>
-        <p>Providing a holistic vision that goes beyond traditional placement. Considered "Glocal" — global perspective seamlessly combined with local advisory and implementation. Full commitment to both manager and client throughout the entire life of each investment.</p>
+        <h3>Global Expertise with Local Execution</h3>
+        <ul>
+          <li>Translate global investment strategies into actionable opportunities within the Mexican market</li>
+          <li>Integration of international best practices with disciplined local implementation</li>
+        </ul>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <h3>Regulatory &amp; Structural Expertise</h3>
+        <ul>
+          <li>Comprehensive understanding of Mexico's investment regimes and governance requirements</li>
+          <li>Experience evaluating and positioning strategies within regulatory and portfolio constraints</li>
+          <li>Responsible for CONSAR regulatory reporting and local compliance</li>
+        </ul>
+      </div>
+      <div class="adv-card">
+        <div class="adv-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Tailored Solutions</h3>
+        <ul>
+          <li>Alignment of each strategy with investor mandates, objectives, and risk parameters</li>
+          <li>Selective partnerships enabling access to differentiated global managers</li>
+          <li>No product overlap between partners — zero conflicts of interest guaranteed</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -309,21 +480,20 @@
 <!-- TEAM -->
 <section class="team" id="team">
   <div class="container">
-    <div class="section-label">Leadership</div>
-    <h2 class="section-title">The Evolve Team</h2>
-    <p class="section-sub">Four seasoned partners with complementary expertise and deep relationships across every segment of the Mexican investment market.</p>
-    <div class="team-grid">
+    <div class="section-eyebrow">Leadership</div>
+    <h2 class="section-title">Experienced Partners</h2>
+    <p class="section-sub">35+ years in the industry. $10B+ USD assets raised with Mexican clients. A team of 12 professionals covering every segment of the market.</p>
+    <div class="team-partners">
       <div class="team-card">
         <div class="team-avatar"><div class="team-initials">IA</div></div>
         <div class="team-body">
           <div class="team-name">Ignacio Armendariz</div>
           <div class="team-role">Partner &amp; CEO</div>
           <ul>
-            <li>34+ years in the financial sector</li>
-            <li>20+ years as Country Head &amp; Partner at Compass Group</li>
-            <li>Positioned Compass as market leader with 20%+ share across ETFs, MFs, SMAs &amp; alternatives</li>
-            <li>Advised on $8B+ in client assets</li>
-            <li>Board member: Compass Group &amp; CCLA</li>
+            <li>35+ years in the financial sector</li>
+            <li>20+ years Country Head &amp; Partner at Compass Group</li>
+            <li>20%+ market share in ETFs, MFs, SMAs &amp; alternatives</li>
+            <li>$8B+ in assets advised</li>
           </ul>
         </div>
       </div>
@@ -333,10 +503,9 @@
           <div class="team-name">Hector Rosado</div>
           <div class="team-role">Partner &amp; Head of Institutionals</div>
           <ul>
-            <li>12+ years of financial industry experience</li>
+            <li>13+ years financial industry experience</li>
             <li>7 years as institutional investor at 2 Afores</li>
-            <li>Led fundraising at Compass: $4B+ liquid assets and $1B+ in alternatives</li>
-            <li>Deep relationships across Afores, insurance companies &amp; endowments</li>
+            <li>$4B+ liquid assets &amp; $1B+ alternatives raised at Compass</li>
           </ul>
         </div>
       </div>
@@ -344,12 +513,12 @@
         <div class="team-avatar"><div class="team-initials">AG</div></div>
         <div class="team-body">
           <div class="team-name">Arturo Guerra</div>
-          <div class="team-role">Partner &amp; Head of FOs &amp; Corporates</div>
+          <div class="team-role">Partner &amp; Head of FOs</div>
           <ul>
             <li>30+ years of experience</li>
-            <li>Co-founder &amp; Director of Capella WM</li>
-            <li>Built FO, MFO &amp; Private Pension division at Compass ($1B+ liquid, $500M alts)</li>
-            <li>Relationships with 80+ family offices &amp; MFOs</li>
+            <li>Built FO, MFO &amp; Private Pension division at Compass</li>
+            <li>$1B+ liquid &amp; $500M+ alternatives raised</li>
+            <li>80+ FO and MFO relationships</li>
           </ul>
         </div>
       </div>
@@ -362,7 +531,37 @@
             <li>Wealth management since 1987</li>
             <li>Pioneered Independent Advisor division at Scotiabank</li>
             <li>50%+ market share ($4B) with RIAs</li>
-            <li>25%+ market share with private banks &amp; local distributors</li>
+            <li>25%+ market share with private banks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="team-label">Full Organizational Structure</div>
+    <div class="team-org">
+      <div class="org-cols">
+        <div class="org-col">
+          <h4>Sales</h4>
+          <ul>
+            <li>Hector Rosado</li>
+            <li class="sub">Ana Pacheco</li>
+            <li class="sub">Alejandro Jimenez</li>
+            <li>Carlos Dodero</li>
+          </ul>
+        </div>
+        <div class="org-col">
+          <h4>Research</h4>
+          <ul>
+            <li>Leonardo Grimaldi</li>
+          </ul>
+        </div>
+        <div class="org-col">
+          <h4>Finance &amp; Product</h4>
+          <ul>
+            <li>Arturo Guerra</li>
+            <li class="sub">Carlos Gomez</li>
+            <li class="sub">Mercedes Escamilla</li>
+            <li class="sub">David Ramos</li>
+            <li class="sub">Jose Alberto Ramirez</li>
           </ul>
         </div>
       </div>
@@ -373,58 +572,61 @@
 <!-- COVERAGE -->
 <section id="coverage">
   <div class="container">
-    <div class="section-label">Market Reach</div>
+    <div class="section-eyebrow">Market Reach</div>
     <h2 class="section-title">Full Coverage of the Mexican Market</h2>
-    <p class="section-sub">Evolve AM provides unmatched access to every segment of Mexico's investment landscape — from Afores to family offices and independent advisors.</p>
+    <p class="section-sub">Evolve AM provides unmatched access to every segment of Mexico's investment landscape.</p>
     <div class="coverage-grid">
-      <div class="cov-card">
+      <div class="cov-col">
         <div class="cov-header">
           <h3>Institutional Segment</h3>
-          <div class="cov-aum">~$650B</div>
-          <div class="cov-aum-label">ESTIMATED AUM COVERED &middot; 50+ CLIENTS</div>
+          <div class="cov-big">
+            <div class="cov-metric"><div class="cov-metric-num">50+</div><div class="cov-metric-label">Institutional Relationships</div></div>
+            <div class="cov-metric"><div class="cov-metric-num">$650B</div><div class="cov-metric-label">Combined AUM</div></div>
+          </div>
         </div>
         <div class="cov-body">
           <ul>
             <li>Afores (pension funds)</li>
             <li>Insurance companies</li>
             <li>Local mutual funds</li>
-            <li>Private pension plans</li>
             <li>Government institutions</li>
             <li>Endowments</li>
           </ul>
         </div>
       </div>
-      <div class="cov-card">
+      <div class="cov-col">
         <div class="cov-header">
           <h3>Family Offices &amp; UHNW</h3>
-          <div class="cov-aum">~$100B</div>
-          <div class="cov-aum-label">ESTIMATED AUM COVERED &middot; 125+ CLIENTS</div>
+          <div class="cov-big">
+            <div class="cov-metric"><div class="cov-metric-num">125+</div><div class="cov-metric-label">Relationships</div></div>
+            <div class="cov-metric"><div class="cov-metric-num">$100B</div><div class="cov-metric-label">Combined AUM</div></div>
+          </div>
         </div>
         <div class="cov-body">
           <ul>
             <li>Single family offices</li>
             <li>Multi-family offices</li>
-            <li>Corporate treasuries</li>
             <li>Ultra-high-net-worth individuals</li>
+            <li>Corporate treasuries</li>
             <li>Private pension vehicles</li>
-            <li>Endowment-style mandates</li>
           </ul>
         </div>
       </div>
-      <div class="cov-card">
+      <div class="cov-col">
         <div class="cov-header">
-          <h3>Intermediaries</h3>
-          <div class="cov-aum">~$65B</div>
-          <div class="cov-aum-label">ESTIMATED AUM COVERED &middot; 100+ CLIENTS</div>
+          <h3>RIAs &amp; Private Banks</h3>
+          <div class="cov-big">
+            <div class="cov-metric"><div class="cov-metric-num">100+</div><div class="cov-metric-label">Relationships</div></div>
+            <div class="cov-metric"><div class="cov-metric-num">$65B</div><div class="cov-metric-label">Combined AUM</div></div>
+          </div>
         </div>
         <div class="cov-body">
           <ul>
             <li>Private banks</li>
-            <li>Independent financial advisors (RIAs)</li>
+            <li>Independent financial advisors</li>
             <li>Retail distribution channel</li>
+            <li>Offshore broker-dealers</li>
             <li>Local broker-dealers</li>
-            <li>Offshore broker-dealer platforms</li>
-            <li>Structured product distributors</li>
           </ul>
         </div>
       </div>
@@ -435,77 +637,94 @@
 <!-- PARTNERS -->
 <section class="partners" id="partners">
   <div class="container">
-    <div class="section-label">Strategic Partners</div>
+    <div class="section-eyebrow">Strategic Partners</div>
     <h2 class="section-title">Our Partners</h2>
-    <p class="section-sub">Evolve AM distributes best-in-class global investment strategies exclusively in the Mexican market.</p>
+    <p class="section-sub">Long-term, exclusive partnerships with leading global asset managers across all asset classes. No overlap. No conflicts.</p>
     <div class="partners-grid">
       <div class="partner-card">
         <div class="partner-name">First Trust</div>
         <div class="partner-strategy">ETFs &amp; UCITS</div>
-        <p class="partner-desc">Distributing First Trust's innovative ETF and UCITS strategies to Mexican institutional investors, family offices, and intermediaries.</p>
-        <div class="partner-tam">
-          <div class="partner-tam-num">$2B TAM</div>
-          <div class="partner-tam-label">Target Market &middot; 20% Market Share (2024)</div>
-        </div>
+        <span class="partner-model">Revenue Sharing</span>
       </div>
       <div class="partner-card">
-        <div class="partner-name">LSV</div>
-        <div class="partner-strategy">Secondaries — GP-Led</div>
-        <p class="partner-desc">Bringing LSV's differentiated secondary and GP-led strategies to Mexico's growing institutional alternatives market.</p>
-        <div class="partner-tam">
-          <div class="partner-tam-num">$1.2B TAM</div>
-          <div class="partner-tam-label">Target Market &middot; 70% GP-Led Share (2024)</div>
-        </div>
+        <div class="partner-name">Columbia Threadneedle</div>
+        <div class="partner-strategy">Mutual Funds</div>
+        <span class="partner-model">Revenue Sharing</span>
       </div>
       <div class="partner-card">
         <div class="partner-name">Monroe Capital</div>
         <div class="partner-strategy">Private Debt</div>
-        <p class="partner-desc">Distributing Monroe Capital's private credit and direct lending strategies to Afores and institutional investors seeking yield and diversification.</p>
-        <div class="partner-tam">
-          <div class="partner-tam-num">$1B TAM</div>
-          <div class="partner-tam-label">Target Market &middot; 50% Market Share (2024)</div>
-        </div>
+        <span class="partner-model">Distribution</span>
+      </div>
+      <div class="partner-card">
+        <div class="partner-name">Pershing Square</div>
+        <div class="partner-strategy">Hedge Fund &amp; Closed End Fund</div>
+        <span class="partner-model">Advisory</span>
+      </div>
+      <div class="partner-card">
+        <div class="partner-name">LSV</div>
+        <div class="partner-strategy">Secondaries GP-Led</div>
+        <span class="partner-model">Distribution</span>
+      </div>
+      <div class="partner-card">
+        <div class="partner-name">Aksia</div>
+        <div class="partner-strategy">Alternatives Advisory</div>
+        <span class="partner-model">Revenue Sharing</span>
+      </div>
+      <div class="partner-card">
+        <div class="partner-name">Arca</div>
+        <div class="partner-strategy">Digital Assets</div>
+        <span class="partner-model">Distribution</span>
+      </div>
+      <div class="partner-card">
+        <div class="partner-name">FUEL</div>
+        <div class="partner-strategy">Venture Capital</div>
+        <span class="partner-model">Distribution</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GLOCAL BANNER -->
-<div class="glocal">
-  <h2>"Glocal" — Where Global Meets Local</h2>
-  <p>Evolve AM is not a traditional placement agent. We are a true local partner — fully committed throughout the entire life of every investment, providing daily client communication, deep regulatory expertise, and comprehensive market intelligence.</p>
-  <div class="glocal-tags">
-    <span class="tag">Marketing &amp; Roadshows</span>
-    <span class="tag">DDQ &amp; Structuring Advisory</span>
-    <span class="tag">Regulatory Expertise</span>
-    <span class="tag">Daily Client Communication</span>
-    <span class="tag">LPAC Seat Coordination</span>
-    <span class="tag">Co-investment Opportunities</span>
+<!-- COMMITMENT BAND -->
+<div class="commitment">
+  <h2>Aligned Interests. No Conflicts. Long-Term Partnership.</h2>
+  <p>In every one of our relationships, there is no short-term compensation incentive. Our focus is long-term success. We guarantee no overlap between partners or strategies — ensuring the opportunities we present are always the most appropriate ones.</p>
+  <div class="commit-items">
+    <span class="commit-item">Co-Investment Alongside Clients</span>
+    <span class="commit-item">No Placement Fees</span>
+    <span class="commit-item">No Strategy Overlap</span>
+    <span class="commit-item">Full Lifecycle Commitment</span>
+    <span class="commit-item">CONSAR &amp; Regulatory Expertise</span>
+    <span class="commit-item">12-Person Dedicated Team</span>
   </div>
 </div>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="container">
-    <div class="section-label">Get in Touch</div>
+    <div class="section-eyebrow">Get in Touch</div>
     <h2 class="section-title">Contact Evolve AM</h2>
-    <p>Interested in partnering with Evolve AM or learning more about our distribution capabilities in Mexico?</p>
+    <p>Interested in partnering with Evolve AM or learning how we can provide access to Mexico's institutional and private wealth market?</p>
     <div class="contact-grid">
       <div class="contact-item">
+        <h4>CEO &amp; General</h4>
+        <p>Ignacio Armendariz</p>
+        <p class="focus">Partner &amp; CEO</p>
+      </div>
+      <div class="contact-item">
         <h4>Institutionals</h4>
-        <p>Hector Rosado<br/>Head of Institutionals</p>
+        <p>Hector Rosado</p>
+        <p class="focus">Afores, Insurance, Endowments</p>
       </div>
       <div class="contact-item">
         <h4>Family Offices</h4>
-        <p>Arturo Guerra<br/>Head of FOs &amp; Corporates</p>
+        <p>Arturo Guerra</p>
+        <p class="focus">FOs, MFOs, UHNW, Corporates</p>
       </div>
       <div class="contact-item">
         <h4>Intermediaries</h4>
-        <p>Carlos Dodero<br/>Head of Intermediaries</p>
-      </div>
-      <div class="contact-item">
-        <h4>General &amp; Media</h4>
-        <p>Ignacio Armendariz<br/>Partner &amp; CEO</p>
+        <p>Carlos Dodero</p>
+        <p class="focus">RIAs, Private Banks, Distributors</p>
       </div>
     </div>
   </div>
@@ -515,27 +734,30 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <svg viewBox="0 0 28 28" fill="none">
-        <circle cx="14" cy="14" r="12" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
-        <line x1="6" y1="21" x2="22" y2="7" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+      <svg viewBox="0 0 26 26" fill="none">
+        <circle cx="13" cy="13" r="11" stroke="rgba(255,255,255,0.4)" stroke-width="1.4"/>
+        <line x1="5" y1="20" x2="21" y2="6" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linecap="round"/>
       </svg>
-      <span>&copy; 2025 Evolve AM S.A. de C.V. &middot; Transforming Investments</span>
+      <span>&copy; 2025 Evolve AM SAPI de CV &middot; Transforming Investments</span>
     </div>
-    <p class="footer-disclaimer">This website is for informational purposes only and does not constitute an offer or solicitation with respect to the purchase or sale of any security.</p>
+    <p class="footer-disclaimer">This document is a strictly confidential communication solely for the use of the recipient and may not be reproduced or circulated without Evolve AM SAPI de CV prior written consent. The information is not intended as an offer or solicitation with respect to the purchase or sale of any security.</p>
   </div>
 </footer>
 
 <script>
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) { e.target.style.opacity = 1; e.target.style.transform = 'translateY(0)'; }
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.08 });
 
-  document.querySelectorAll('.edge-card, .team-card, .cov-card, .partner-card, .about-card').forEach(el => {
-    el.style.opacity = 0;
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  document.querySelectorAll('.diff-card,.phil-card,.engage-step,.adv-card,.team-card,.cov-col,.partner-card,.exec-pillar,.model-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
     observer.observe(el);
   });
 </script>
